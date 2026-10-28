@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sorry | Team Digha</title>
+<title>Sorry | Guysss</title>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -181,9 +181,9 @@ canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index
   <div class="tickets">
     <div class="ticket reveal">
       <div class="t-main">
-        <div class="t-label">Day trip · Boarding pass</div>
+        <div class="t-label">Boarding pass · Day trip</div>
         <div class="t-route">Kolkata → Digha</div>
-        <div class="t-meta"><div><span>Passengers</span><strong>Everyone but me</strong></div><div><span>Duration</span><strong>1 day</strong></div><div><span>Vibe</span><strong>Sea, foods, reels</strong></div></div>
+        <div class="t-meta"><div><span>Passengers</span><strong>Everyone but me</strong></div><div><span>Date</span><strong>31 October 2026</strong></div><div><span>Vibe</span><strong>Sea, foods, reels</strong></div></div>
       </div>
       <div class="stamp">I can’t come</div>
       <div class="t-stub"><small>SEAT</small><b>empty</b><small>(mine)</small></div>
@@ -192,7 +192,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index
       <div class="t-main">
         <div class="t-label">Boarding pass · Next trip</div>
         <div class="t-route">Anywhere you choose</div>
-        <div class="t-meta"><div><span>Passengers</span><strong>Everyone</strong></div><div><span>Date</span><strong>Soon</strong></div><div><span>Vibe</span><strong>Me (guilty) will be there</strong></div></div>
+        <div class="t-meta"><div><span>Passengers</span><strong>Everyone</strong></div><div><span>Date</span><strong>Coming Soon...</strong></div><div><span>Vibe</span><strong>Me (guilty) will be there</strong></div></div>
       </div>
       <div class="t-stub"><small>NO</small><b>refunds</b><small>ever</small></div>
     </div>
@@ -243,8 +243,31 @@ var PROMISES = [
 // ======================
 var $ = function(id){return document.getElementById(id)};
 $("who").textContent = FRIENDS; $("dear").textContent = "Dear " + FRIENDS + ",";
-$("forWho").textContent = "For " + FRIENDS; $("from").textContent = FROM; $("from2").textContent = FROM;
-document.title = "Sorry, " + FRIENDS + " 🌊";
+$("forWho").textContent = "👉 For You All 👈"; $("from").textContent = FROM; $("from2").textContent = FROM;
+document.title = "Sorry |" + " Guysss !!";
+
+var heroNames = ["Team Digha", "Souradeep", "Adrija", "Shounak", "Anushka", "Saptarshi", "Neelam", "Suranjan"];
+var heroNameIndex = 0;
+function eraseHeroName(){
+  var who = $("who");
+  if (who.textContent.length){
+    who.textContent = who.textContent.slice(0, -1);
+    setTimeout(eraseHeroName, 90);
+    return;
+  }
+  heroNameIndex = (heroNameIndex + 1) % heroNames.length;
+  setTimeout(typeHeroName, 180);
+}
+function typeHeroName(){
+  var who = $("who"), name = heroNames[heroNameIndex];
+  if (who.textContent.length < name.length){
+    who.textContent = name.slice(0, who.textContent.length + 1);
+    setTimeout(typeHeroName, 120);
+    return;
+  }
+  setTimeout(eraseHeroName, 1500);
+}
+setTimeout(eraseHeroName, 1500);
 
 // waves
 [["#7a4a8a",22,.55,24,"M0,64 C240,120 480,0 720,64 C960,128 1200,8 1440,64"],
